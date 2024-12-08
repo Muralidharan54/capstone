@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts for CO-2 Emissions dataset</title>
+    <style>
+        .chart-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .chart-description {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Charts for CO-2 Emissions dataset</h1>
+    {% for chart in charts %}
+    <div class="chart-container">
+        <img src="data:image/png;base64,{{ chart.image }}" alt="Chart {{ loop.index }}">
+        <div class="chart-description">{{ chart.text }}</div>
+    </div>
+    {% endfor %}
+</body>
+</html>
